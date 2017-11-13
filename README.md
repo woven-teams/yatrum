@@ -68,14 +68,16 @@ __[Subscribe to this course here](https://upscri.be/a00eaf/)__
 ##### Clone the repoo
 
 ```
-$ git clone https://github.com/aviabird/yatrum.git
+$ git clone https://github.com/woven-teams/yatrum.git
 $ cd yatrum
 ```
 
 ##### Install npm dependencies
+
 ```
-$ npm install
+$ yarn install
 ```
+
 ##### Additional Settings
 
 For Social login to work you need to create an app on faceook and google and note down the client id and secret id of individual app.
