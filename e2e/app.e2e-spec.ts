@@ -7,7 +7,7 @@ describe('travel-app-frontend App', function() {
     page = new TravelAppFrontendPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display the home page text', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('app works!');
   });
