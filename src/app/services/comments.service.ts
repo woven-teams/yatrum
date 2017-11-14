@@ -49,7 +49,7 @@ export class CommentsService {
     });
 
     return this.http.post(
-      `${this.apiLink}/trips/add_comments`,
+      `${this.apiLink}/trips/${comment['trip_id']}/comments`,
       { comment: comment },
       { headers: headers }
     )
@@ -70,9 +70,8 @@ export class CommentsService {
       // use Restangular which creates interceptor
     });
 
-    return this.http.post(
-      `${this.apiLink}/trips/comments`,
-      { comment: comment },
+    return this.http.delete(
+      `${this.apiLink}/trips/${comment['trip_id']}/comments/${comment['id']}`,
       { headers: headers }
     )
       .map((data: Response) => comment)
