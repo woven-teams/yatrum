@@ -65,12 +65,7 @@ __[Subscribe to this course here](https://upscri.be/a00eaf/)__
 
 ## Setting up
 
-##### Clone the repoo
-
-```
-$ git clone https://github.com/woven-teams/yatrum.git
-$ cd yatrum
-```
+To run these commands, you should be in the `client/` directory.
 
 ##### Install npm dependencies
 
@@ -78,17 +73,8 @@ $ cd yatrum
 $ yarn install
 ```
 
-##### Additional Settings
-
-For Social login to work you need to create an app on faceook and google and note down the client id and secret id of individual app.
-Below are instructions for creating app on inidviudal social media site
-
-1. <strong>Google</strong> : [Creating App Engine Project and Application](https://developers.google.com/ad-exchange/rtb/open-bidder/google-app-guide)
-2. <strong>Facebook</strong> : [Creating a New Facebook App](https://developers.facebook.com/docs/apps/register)
-
-Once you have created the app,rename `secret.ts.example` file in `app` folder to `secret.ts` and replace the dummy string with client id of respective social app.
-
 ## Development server frontend
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 By default it connects to our dev api. If you want to setup the server locally clone the [api](https://github.com/aviabird/yatrum-api) and setup the rails server, However we only suggest that if you are familiar with Ruby on Rails. Please follow the instructions on the project page as the frontend uses the backend API to connect.
@@ -102,10 +88,16 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-## Deploying to Github Pages
+##### Additional Settings
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+For Social login to work you need to create an app on faceook and google and note down the client id and secret id of individual app.
+Below are instructions for creating app on inidviudal social media site
 
+1. <strong>Google</strong> : [Creating App Engine Project and Application](https://developers.google.com/ad-exchange/rtb/open-bidder/google-app-guide)
+2. <strong>Facebook</strong> : [Creating a New Facebook App](https://developers.facebook.com/docs/apps/register)
+
+Once you have created the app,rename `secret.ts.example` file in `app` folder to `secret.ts` and replace the dummy string with client id of respective social app.
 
 ## License
+
 [MIT License](LICENSE.md)
