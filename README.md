@@ -75,7 +75,7 @@ $ yarn install
 
 ## Development server frontend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `yarn run ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 By default it connects to our dev api. If you want to setup the server locally clone the [api](https://github.com/aviabird/yatrum-api) and setup the rails server, However we only suggest that if you are familiar with Ruby on Rails. Please follow the instructions on the project page as the frontend uses the backend API to connect.
 
@@ -86,7 +86,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Before running the tests make sure you are serving the app via `yarn run ng serve`.
 
 ##### Additional Settings
 
