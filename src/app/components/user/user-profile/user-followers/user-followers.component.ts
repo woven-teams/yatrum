@@ -5,7 +5,7 @@ import { LoadUserFollowersAction, FollowProfileUserAction, FollowUserFollowersAc
 import { Router, ActivatedRoute } from '@angular/router';
 import { State, getUserFollowers, getLoggedInUserId } from './../../../../reducers/index';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs/subscription';
+import { Subscription } from 'rxjs/Subscription';
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
