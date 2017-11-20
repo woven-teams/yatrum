@@ -1,6 +1,6 @@
 /**
  * TODO: ALL Observable<any> must be changed to concreate Observable of some type - VoidZero
- *  
+ *
  */
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
@@ -87,16 +87,16 @@ export class TripsService {
     // 						console.log("inside");
     // 						this.store.dispatch(new fromTripActions.TripsLoadedAction(data));
     // 					})
-    // 				console.log("after");	
+    // 				console.log("after");
     // 			}
-    // 		})	
+    // 		})
     // 	}).subscribe();
   }
 
 	/**
 	 * Get all trips for dashboard page
-	 * @method getTrips 
-	 * @param 
+	 * @method getTrips
+	 * @param
 	 * @return {Observable} Observable of array of trips
 	 */
   getTrips(pageParams): Observable<Trip[]> | Observable<String> {
@@ -133,8 +133,8 @@ export class TripsService {
 
 	/**
 	 * Get all trips for dashboard page
-	 * @method getTrendingTrips 
-	 * @param 
+	 * @method getTrendingTrips
+	 * @param
 	 * @return {Observable} Observable of array of trips
 	 */
   getTrendingTrips(pageParams): Observable<Trip[]> | Observable<String> {
@@ -151,8 +151,8 @@ export class TripsService {
 
 	/**
 	 * Get all trips for search page
-	 * @method searchTrips 
-	 * @param 
+	 * @method searchTrips
+	 * @param
 	 * @return {Observable} Observable of array of trips
 	 */
   searchTrips(searchQuery): Observable<Trip[]> | Observable<String> {
@@ -170,8 +170,8 @@ export class TripsService {
 
 	/**
 	 * Get all trips of a particular user
-	 * @method getUserTrip 
-	 * @param {String} user id 
+	 * @method getUserTrip
+	 * @param {String} user id
 	 * @return {Observable} Observable with array of user trip objects
 	 */
   getUserTrips(id: string): Observable<Trip[]> | Observable<String> {
@@ -194,7 +194,7 @@ export class TripsService {
   }
 
 	/**
-	 * Save a trip 
+	 * Save a trip
 	 * @method saveTrip
 	 * @param {Trip} Trip object to be saved
 	 * @return {Observable} Observable with created trip object
@@ -219,7 +219,7 @@ export class TripsService {
   }
 
 	/**
-	 * Update trip data 
+	 * Update trip data
 	 * @method udpateTrip
 	 * @param {Trip} trip object to be updated
 	 * @return {Observable} Observable with updated trip object
@@ -245,7 +245,7 @@ export class TripsService {
   }
 
 	/**
-	 * User Like/Dislikes trip 
+	 * User Like/Dislikes trip
 	 * @method likeTrip
 	 * @param {string} tripId of trip
 	 * @return {Observable} Observable with updated trip object
@@ -265,65 +265,9 @@ export class TripsService {
   }
 
 	/**
-	 * Get Trip Comments
-	 * @method getComments
-	 * @param {string} tripId of trip
-	 * @return {Observable} Observable with Comments
-	 */
-  getComments(tripId: string): Observable<any> {
-    return this.http.get(`${this.apiLink}/trips/${tripId}/comments`)
-      .map((data: Response) => data.json())
-      .catch((res: Response) => this.catchError(res));
-  }
-
-	/**
-	 * Add Comment 
-	 * @method addComment
-	 * @param {Comment} comment
-	 * @return {Observable} Observable with Comment
-	 */
-  addComment(comment: Comment): Observable<any> {
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'Authorization': this.getUserAuthToken()
-      // use Restangular which creates interceptor
-    });
-
-    return this.http.post(
-      `${this.apiLink}/trips/add_comments`,
-      { comment: comment },
-      { headers: headers }
-    )
-      .map((data: Response) => data.json())
-      .catch((res: Response) => this.catchError(res));
-  }
-
-	/**
-	 * Delete Comment 
-	 * @method deleteComment
-	 * @param {Comment} comment
-	 * @return {Observable} Observable with Comment
-	 */
-  deleteComment(comment: Comment): Observable<any> {
-    const headers = new Headers({
-      'Content-Type': 'application/json',
-      'Authorization': this.getUserAuthToken()
-      // use Restangular which creates interceptor
-    });
-
-    return this.http.post(
-      `${this.apiLink}/trips/comments`,
-      { id: comment.id, user_id: comment.user_id },
-      { headers: headers }
-    )
-      .map((data: Response) => comment)
-      .catch((res: Response) => this.catchError(res));
-  }
-
-	/**
-	 * Increase trip view count 
+	 * Increase trip view count
 	 * @method increase_view_count
-	 * @param {string} id 
+	 * @param {string} id
 	 * @return {Observable} Observable with status
 	 */
   increase_view_count(id: any): Observable<any> {
@@ -365,8 +309,8 @@ export class TripsService {
       this.toastyService.error({ title: "Server Error", msg: "Something went wrong !!!" });
     }
     console.log('in catch error method');
-    // not returning throw as it raises an error on the parent observable 
-    // MORE INFO at https://youtu.be/3LKMwkuK0ZE?t=24m29s    
+    // not returning throw as it raises an error on the parent observable
+    // MORE INFO at https://youtu.be/3LKMwkuK0ZE?t=24m29s
     return Observable.of('server error');
   }
 }

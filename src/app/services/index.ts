@@ -6,6 +6,7 @@ import { TripsService } from './trips.service';
 import { UserService } from './user.service';
 import { TripFormService } from './forms/trip-form.service';
 import { InstagramIntegrationService } from './instagram-integration.service';
+import { CommentsService } from './comments.service';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { InstagramIntegrationService } from './instagram-integration.service';
     ServerAuthService,
     TripsService,
     UserService,
-    InstagramIntegrationService
+    InstagramIntegrationService,
+    CommentsService
   ]
 })
 export class ServiceModule { }
